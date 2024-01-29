@@ -1,14 +1,16 @@
 {
   "name": "serialws",
   "version": "1.0.0",
-  "description": "",
+  "description": "Creates a WebSocket server, tries to access the COM port and sends the received data to WebSocket client.",
   "main": "app.js",
+  "private": true,
+  "repository": "github:Lantsov/serialws",
   "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1"
+    "run": "node app.js"
   },
   "keywords": [],
-  "author": "",
-  "license": "ISC",
+  "author": "@Lantsov",
+  "license": "MIT",
   "dependencies": {
     "dotenv": "^16.4.1",
     "serialport": "^12.0.0",
