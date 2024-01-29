@@ -13,10 +13,14 @@ wss.on('connection', function connection(ws) {
     websocketClient = ws;
 });
 
+let errorDisplayed = false;
 const connectToSerialPort = () => {
     port = new SerialPort({path: portName, baudRate: baudRate}, function (err) {
         if (err) {
-            console.error('Error when opening COM port:', err.message);
+            if (!errorDisplayed) {
+                console.error('Error when opening COM port:', err.message);
+                errorDisplayed = true;
+            }
             setTimeout(connectToSerialPort, 5000);
         }
     });

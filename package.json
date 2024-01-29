@@ -1,6 +1,6 @@
 {
   "name": "serialws",
-  "version": "1.0.0",
+  "version": "1.0.1",
   "description": "Creates a WebSocket server, tries to access the COM port and sends the received data to WebSocket client.",
   "main": "app.js",
   "private": true,
