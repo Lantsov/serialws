@@ -31,10 +31,19 @@ const connectToSerialPort = () => {
 
     port.on('data', function (data) {
         const buffer = Buffer.from(data);
-        const text = buffer.toString('ascii');
+        const text = buffer.toString('utf8');
         console.log('Received data:', text);
+
+        const jsonData = {
+            message: text,
+            timestamp: Date.now(),
+        };
+        const jsonStr = JSON.stringify(jsonData);
+
         if (websocketClient) {
-            websocketClient.send(text);
+            websocketClient.send(jsonStr);
+        } else {
+            console.log('Received error');
         }
     });
 
