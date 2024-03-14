@@ -10,6 +10,7 @@ let port;
 
 wss.on('connection', function connection(ws) {
     console.log('WS Connected.');
+    ws.send(JSON.stringify({message: 'CONNECTED', timestamp: Date.now()}));
     websocketClient = ws;
 });
 
