@@ -16,6 +16,7 @@ const serialPortManager: SerialPortManager = new SerialPortManager(
   },
 );
 
+serialPortManager.start();
 console.clear();
 console.log(`COM-port to WebSocket v.${version} is running...`);
 console.log(`WebSocket server running on port ${config.websocketPort}`);

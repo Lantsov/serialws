@@ -20,6 +20,9 @@ class SerialPortManager {
     this.portName = portName;
     this.baudRate = baudRate;
     this.onData = onData;
+  }
+
+  public start(): void {
     this.connect();
   }
 
